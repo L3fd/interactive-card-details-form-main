@@ -1,6 +1,6 @@
 const cardNumber = document.querySelector(".card-number");
 const cardName = document.querySelector(".cardholder-name");
-const cardExpDate = document.querySelector(".exp-date");
+const cardExpDate = document.querySelector(".expiration-date");
 const cardCVC = document.querySelector(".cvc span");
 // inputs
 const form = document.querySelector("form");
@@ -25,8 +25,9 @@ const hideErr = (input, arrErr) => {
 };
 
 let inputNameValue;
-let inputNumberValue = 00;
-let inputMonthValue = 00;
+let inputNumberValue;
+let inputYearValue = "00";
+let inputMonthValue = "00";
 let inputCVCValue;
 
 const validateInput = (input, arrErr, wordLength) => {
@@ -98,3 +99,30 @@ const deleteSpace = (input) => {
 		input.value = formatText;
 	}
 };
+
+inputMonth.addEventListener("input", (e) => {
+	e.preventDefault();
+
+	deleteSpace(inputMonth);
+
+	inputMonthValue = e.target.value;
+	cardExpDate.textContent = inputMonthValue + "/" + inputYearValue;
+});
+
+inputYear.addEventListener("input", (e) => {
+	e.preventDefault();
+
+	deleteSpace(inputYear);
+
+	inputYearValue = e.target.value;
+	cardExpDate.textContent = inputMonthValue + "/" + inputYearValue;
+});
+
+inputCVC.addEventListener("input", (e) => {
+	e.preventDefault();
+
+	deleteSpace(inputCVC);
+
+	inputCVCValue = e.target.value;
+	cardCVC.textContent = inputCVCValue;
+});
