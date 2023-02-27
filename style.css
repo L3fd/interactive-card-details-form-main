@@ -183,7 +183,7 @@ form {
 	transition: all 0.3s ease-in-out;
 }
 .btn:hover {
-	background-color: hsla((278), 68%, 11%, 80%);
+	background-color: hsla(278, 68%, 11%, 80%);
 }
 
 .complete {
@@ -261,6 +261,38 @@ form {
 	.info {
 		font-size: 1.4rem;
 		letter-spacing: 0.14rem;
+	}
+	form {
+		margin-top: 0.3rem;
+		padding: 0;
+		max-width: 38.1rem;
+	}
+	.form-group {
+		margin: 0;
+		margin-bottom: 2.8rem;
+	}
+
+	.form-exp-date {
+		gap: 2.8rem;
+	}
+
+	.date {
+		gap: 1rem;
+	}
+
+	#month,
+	#year {
+		width: 8rem;
+	}
+	.btn {
+		margin-top: 1.2rem;
+	}
+
+	.complete {
+		margin-top: 0;
+		padding: 0;
+		width: 100%;
+		max-width: 38.1rem;
 	}
 }
 
