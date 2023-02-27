@@ -23,3 +23,48 @@ const hideErr = (input, arrErr) => {
 	input.classList.remove("input-err");
 	infoErr[arrErr].classList.remove("block");
 };
+
+let inputNameValue;
+let inputNumberValue = 00;
+let inputMonthValue = 00;
+let inputCVCValue;
+
+const validateInput = (input, arrErr, wordLength) => {
+	if (!wordLength) {
+		if (!input.value) {
+			showErr(input, arrErr, "Can't be blank");
+		} else {
+			hideErr(input, arrErr);
+			inputNameValue = input.value;
+		}
+	} else {
+		if (!input.value) {
+			showErr(input, arrErr, "Can't be blank");
+		} else if (!/^\d+(\s\d+)*$/.test(input.value)) {
+			showErr(input, arrErr, "Wrong format, numbers only");
+		} else if (input.value.length < wordLength) {
+			if (wordLength > 3) {
+				showErr(input, arrErr, "Card number must be 16 numbers");
+			} else {
+				showErr(input, arrErr, `Card number must be ${wordLength} numbers`);
+			}
+		} else {
+			hideErr(input, arrErr);
+
+			switch (input) {
+				case inputNumber:
+					inputNumberValue = input.value;
+					break;
+				case inputMonth:
+					inputMonthValue == input.value;
+					break;
+				case inputYear:
+					inputYearValue = input.value;
+					break;
+				case inputCVC:
+					inputCVCValue = input.value;
+					break;
+			}
+		}
+	}
+};
