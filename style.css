@@ -10,7 +10,8 @@
 	--primary-700: hsl(279, 6%, 55%);
 	--primary-900: hsl(278, 68%, 11%);
 	--ff-primary: "Space Grotesk", sans-serif;
-	--ff-size: 18px;
+	--ff-size: 1.8rem;
+	font-size: 10px;
 }
 
 * {
@@ -28,4 +29,38 @@ body {
 	background-image: url("./images/bg-main-mobile.png");
 	background-repeat: no-repeat;
 	background-size: 100%;
+}
+img {
+	display: block;
+}
+main {
+	max-width: 37.5rem;
+	padding: 3.2rem 1.6rem;
+	margin: 0 auto;
+}
+.card {
+	position: relative;
+	height: 25.2rem;
+}
+
+.card-back {
+	position: relative;
+	max-width: 28.6rem;
+	margin: 0 0 0 auto;
+}
+
+.card-back img {
+	width: 100%;
+}
+
+.card-back .cvc {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding-right: 3.6rem;
+	color: white;
 }
