@@ -89,6 +89,10 @@ inputNumber.addEventListener("input", (e) => {
 
 	e.target.value = formatText;
 
+	if (inputNumberValue === "") {
+		cardNumber.textContent = "0000 0000 0000 0000";
+	}
+
 	inputNumberValue = e.target.value;
 	cardNumber.textContent = inputNumberValue;
 });
