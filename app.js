@@ -89,12 +89,11 @@ inputNumber.addEventListener("input", (e) => {
 
 	e.target.value = formatText;
 
+	inputNumberValue = e.target.value;
+	cardNumber.textContent = inputNumberValue;
 	if (inputNumberValue === "") {
 		cardNumber.textContent = "0000 0000 0000 0000";
 	}
-
-	inputNumberValue = e.target.value;
-	cardNumber.textContent = inputNumberValue;
 });
 
 const deleteSpace = (input) => {
