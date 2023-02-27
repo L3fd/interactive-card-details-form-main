@@ -1,1 +1,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+:root {
+	--active-input-b: linear-gradient(
+		hsl(249, 99%, 64%) 0%,
+		hsl(278, 94%, 30%) 100%
+	);
+	--input-err: hsl(0, 100%, 66%);
+	--white: hsl(0, 0%, 100%);
+	--primary-300: hsl(270, 3%, 87%);
+	--primary-700: hsl(279, 6%, 55%);
+	--primary-900: hsl(278, 68%, 11%);
+	--ff-primary: "Space Grotesk", sans-serif;
+	--ff-size: 18px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	line-height: 1em;
+}
+
+body {
+	font-family: var(--ff-primary);
+	font-size: var(--ff-size);
+	font-weight: 500;
+	height: 100vh;
+	background-image: url("./images/bg-main-mobile.png");
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
