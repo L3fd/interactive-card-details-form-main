@@ -11,7 +11,7 @@ const inputYear = document.querySelector("#year");
 const inputCVC = document.querySelector("#cvc");
 
 const infoErr = document.querySelectorAll(".info-err");
-const complete = document.querySelectorAll(".complete");
+const complete = document.querySelector(".complete");
 
 const showErr = (input, arrErr, message) => {
 	input.classList.add("input-err");
@@ -125,4 +125,41 @@ inputCVC.addEventListener("input", (e) => {
 
 	inputCVCValue = e.target.value;
 	cardCVC.textContent = inputCVCValue;
+});
+
+form.addEventListener("submit", (e) => {
+	e.preventDefault();
+
+	inputNameValue = "";
+	inputNumberValue = "";
+	inputMonthValue = "00";
+	inputYearValue = "00";
+	inputCVCValue = "";
+
+	validateInput(inputName, 0);
+	validateInput(inputNumber, 1, 19);
+	validateInput(inputMonth, 2, 2);
+	validateInput(inputYear, 2, 2);
+	validateInput(inputCVC, 3, 3);
+
+	if (
+		inputNameValue &&
+		inputNumberValue &&
+		inputMonthValue &&
+		inputYearValue &&
+		inputCVCValue
+	) {
+		cardName.textContent = inputNameValue;
+		cardNumber.textContent = inputNumberValue;
+		cardExpDate.textContent = inputMonthValue + "/" + inputYearValue;
+		cardCVC.textContent = inputCVCValue;
+
+		form.classList.add("hidden");
+		complete.classList.add("block");
+		complete.classList.remove("hidden");
+	}
+});
+
+complete.addEventListener("click", () => {
+	location.reload(true);
 });
