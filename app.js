@@ -68,3 +68,26 @@ const validateInput = (input, arrErr, wordLength) => {
 		}
 	}
 };
+
+inputName.addEventListener("input", (e) => {
+	e.preventDefault();
+	inputNameValue = e.target.value;
+	cardName.textContent = inputNameValue;
+});
+
+inputNumber.addEventListener("input", (e) => {
+	e.preventDefault;
+
+	let formatText = e.target.value;
+
+	formatText = formatText.substring(0, 19);
+	formatText = formatText
+		.replace(/\s/g, "")
+		.replace(new RegExp(`(.{${4}})`, "g"), "$1 ")
+		.trim();
+
+	e.target.value = formatText;
+
+	inputNumberValue = e.target.value;
+	cardNumber.textContent = inputNumberValue;
+});
