@@ -91,3 +91,10 @@ inputNumber.addEventListener("input", (e) => {
 	inputNumberValue = e.target.value;
 	cardNumber.textContent = inputNumberValue;
 });
+
+const deleteSpace = (input) => {
+	if (/\s/.test(input.value)) {
+		let formatText = input.value.replace(/\s/g, "");
+		input.value = formatText;
+	}
+};
