@@ -20,6 +20,14 @@
 	box-sizing: border-box;
 	line-height: 1em;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+input[type="number"] {
+	-moz-appearance: textfield;
+}
 
 body {
 	font-family: var(--ff-primary);
@@ -28,7 +36,7 @@ body {
 	height: 100vh;
 	background-image: url("./images/bg-main-mobile.png");
 	background-repeat: no-repeat;
-	background-size: 100%;
+	background-size: 100% 24rem;
 }
 img {
 	display: block;
@@ -101,4 +109,90 @@ main {
 	letter-spacing: 0.065rem;
 	color: white;
 	text-transform: uppercase;
+}
+
+form {
+	margin-top: 5rem;
+	padding: 0 0.8rem;
+	display: block;
+}
+.form-group {
+	margin-top: 2.2rem;
+	display: flex;
+	flex-direction: column;
+}
+.form-group label {
+	display: inline-block;
+	font-size: 1.2rem;
+	letter-spacing: 0.165rem;
+	text-transform: uppercase;
+	color: var(--primary-900);
+	margin-bottom: 1rem;
+}
+.form-group input {
+	font-family: var(--ff-primary);
+
+	font-size: 1.7rem;
+	letter-spacing: 0.03em;
+	font-weight: 500;
+	outline: none;
+	border: 1px solid var(--primary-300);
+	border-radius: 0.8rem;
+	width: 100%;
+	height: 4.5rem;
+	padding: 0 1.6rem;
+	color: var(--primary-900);
+}
+.form-group input:focus {
+	border: 1px solid;
+	border-color: var(--active-input-b);
+}
+.info-err {
+	margin-top: 1rem;
+	font-size: 1.2rem;
+	color: var(--input-err);
+	display: none;
+}
+
+.form-exp-date {
+	display: flex;
+	gap: 1rem;
+}
+.date {
+	display: flex;
+	gap: 0.8rem;
+}
+#month,
+#year {
+	width: 7.2rem;
+}
+
+.submit-btn {
+	display: block;
+	margin-top: 2.8rem;
+	border: 0;
+	background-color: var(--primary-900);
+	font-family: var(--ff-primary);
+	font-size: var(--ff-size);
+	font-weight: 500;
+	color: white;
+	width: 100%;
+	height: 5.3rem;
+	border-radius: 0.8rem;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+}
+.submit-btn:hover {
+	background-color: hsla((278), 68%, 11%, 80%);
+}
+/* Utils */
+
+.block {
+	display: block;
+}
+.hidden {
+	display: none;
+}
+.input-err {
+	border-color: var(--input-err);
 }
