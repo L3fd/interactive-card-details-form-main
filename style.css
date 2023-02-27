@@ -206,6 +206,49 @@ form {
 	color: var(--primary-700);
 	margin-bottom: 5rem;
 }
+
+/* Media query to desktop */
+
+@media screen and (min-width: 1260px) {
+	body {
+		background-image: url("./images/bg-main-desktop.png");
+		background-repeat: no-repeat;
+		background-size: 33.6% 100%;
+	}
+	main {
+		max-width: 111.2rem;
+		padding: 3.2rem 1.6rem;
+		margin: auto;
+		height: 100vh;
+		display: flex;
+		align-items: center;
+		gap: 12.7rem;
+	}
+	.card {
+		max-width: max-content;
+		height: 52.8rem;
+		display: flex;
+		flex-direction: column-reverse;
+		gap: 3.8rem;
+	}
+	.card-back,
+	.card-front {
+		max-width: max-content;
+	}
+	.card-front {
+		position: relative;
+		top: 0;
+	}
+	.card-back {
+		margin-left: 9.4rem;
+	}
+	.card-back .cvc {
+		font-size: 1.4rem;
+		letter-spacing: 0.14;
+		padding-right: 5.8rem;
+	}
+}
+
 /* Utils */
 
 .block {
